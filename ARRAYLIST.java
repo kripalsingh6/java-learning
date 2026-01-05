@@ -45,6 +45,7 @@ public class ARRAYLIST {
 
 
     // System.out.println();
+    public static int repeatnum()
 
     public static void main(String[] args) {
         ArrayList<ArrayList<Integer>>mainlist=new ArrayList<>();

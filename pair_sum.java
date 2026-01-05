@@ -71,7 +71,7 @@ public class pair_sum {
         // list.add(9);
         // list.add(10);
         int target=6;
-        System.out.println(sum2(list, target));
+        System.out.println(sum(list, target));
 
 
     }

@@ -175,6 +175,16 @@ public class pattern {
         }
     }*/
 
+        public static void triangle(int row, int col){
+            for(int i=1; i<=row; i++){
+                for(int j=col- i; j<=col; j++){
+                    System.out.print("*");
+                }
+                System.out.println();
+            }
+            
+        }
+
     public static void hollow_rectangle(int row, int col){
         for(int i=1; i<=row; i++){
             for(int j=1; j<=col; j++){
@@ -190,7 +200,7 @@ public class pattern {
 
           
    public static void main(String[] args) {
-        hollow_rectangle(10,20 );
+        triangle(4,4 );
         //inverted_tringle(4);
         //hollow_tringle(4);
        // prymid(4);
