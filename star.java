@@ -15,8 +15,21 @@ public class star {
     
     public static void triNum(int n){
         for(int i = 1; i<=n; i++){
-            for(int j=i; j<=n; j++){
-                System.out.print(i);
+            for(int j=n-i; j<=n; j++){
+                System.out.print(j);
+            }
+            System.out.println();
+        }
+    }
+
+    public static void hollowRect(int n){
+        for(int i=1 ; i<=n; i++){
+            for(int j=1; j<=n ; j++){
+                if(i==1 || j==1 || j==n || i==n){
+                    System.out.print("*");
+                }else{
+                    System.out.print(" ");
+                }
             }
             System.out.println();
         }
@@ -25,6 +38,7 @@ public class star {
     public static void main(String args[]){
         int n=5;
         // hollowstar(n);
-        triNum(n);
+        // triNum(n);
+        hollowRect(n);
     }
 }
