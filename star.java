@@ -47,11 +47,23 @@ public class star {
             System.out.println();
         }
     }
+    public static int kadane(int num[]){
+        int maxnum= Integer.MIN_VALUE;
+        int currnum=0;
+        
+        for(int i=0; i<num.length; i++){
+            currnum=Math.max(num[i], currnum+num[i]);
+             maxnum= Math.max(maxnum, currnum);
+        }
+        return maxnum;
+    }
     public static void main(String args[]){
+        int num[]={1,2,3,4,5,6};
         int n=5;
         // hollowstar(n);
         // triNum(n);
         // hollowRect(n);
-        hollowTri(n);
+        // hollowTri(n);
+        System.out.println(kadane(num));
     }
 }
