@@ -57,6 +57,16 @@ public class star {
         }
         return maxnum;
     }
+
+    public static void fulltri(int n){
+        for(int i=1; i<=n; i++){
+            for(int j=n-i; j<n; j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        
+    }
     public static void main(String args[]){
         int num[]={1,2,3,4,5,6};
         int n=5;
@@ -64,6 +74,7 @@ public class star {
         // triNum(n);
         // hollowRect(n);
         // hollowTri(n);
-        System.out.println(kadane(num));
+        // System.out.println(kadane(num));
+        fulltri(n);
     }
 }
