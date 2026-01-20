@@ -81,6 +81,20 @@ public class star {
             System.out.println();
         }
     }
+    public static void doubletri(int n){
+        for (int i = 1; i <= n; i++) {
+            // Print spaces for left padding
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+            // Print stars
+            for (int k = 1; k <= 2 * i - 1; k++) {
+                System.out.print("*");
+            }
+            // Move to next line
+            System.out.println();
+        }
+    }
     public static void main(String args[]){
         int num[]={1,2,3,4,5,6};
         int n=5;
