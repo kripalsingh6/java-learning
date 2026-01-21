@@ -94,7 +94,19 @@ public class star {
             // Move to next line
             System.out.println();
         }
+
+        for(int i=n; i>=1; i--){
+            for(int j=n; j>=i; j--){
+                System.out.print(" ");
+            }
+            for (int k = 1; k <= 2 * i - 1; k++) {
+                System.out.print("*");
+        }
+        System.out.println();
+
     }
+}
+
     public static void main(String args[]){
         int num[]={1,2,3,4,5,6};
         int n=5;
@@ -103,6 +115,6 @@ public class star {
         // hollowRect(n);
         // hollowTri(n);
         // System.out.println(kadane(num));
-        fulltri(n);
+        doubletri(n);
     }
 }
