@@ -141,6 +141,22 @@ public static void  rhombus(int n){
         System.out.println();
     }
 }
+public static void hollowrom(int n){
+     for(int i=1; i<=n; i++){
+      for(int s=1; s<=n-i; s++){
+        System.out.print(" ");
+      }
+        for(int j=1; j<=n; j++){
+            if (i == 1 || i == n || j == 1 || j == n) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+        }
+        
+        System.out.println();
+    }
+}
 
     public static void main(String args[]){
         int num[]={1,2,3,4,5,6};
@@ -153,6 +169,7 @@ public static void  rhombus(int n){
         // doubletri(n);
 
         // square(n);
-      rhombus(n);
+    //   rhombus(n);
+    hollowrom(n);
     }
 }
