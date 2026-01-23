@@ -116,6 +116,19 @@ public static void square(int n){
     }
 }
 
+public static void hollowsqu(int n){
+    for(int i=1; i<=n; i++){
+        for(int j=1; j<=n; j++){
+            if(i==1 || j==1 || i==n || j==n){
+                System.out.print("*");
+            }else{
+                System.out.print(" ");
+            }
+        }
+        System.out.println();
+    }
+}
+
     public static void main(String args[]){
         int num[]={1,2,3,4,5,6};
         int n=5;
@@ -126,6 +139,7 @@ public static void square(int n){
         // System.out.println(kadane(num));
         // doubletri(n);
 
-        square(n);
+        // square(n);
+        hollowsqu(n);
     }
 }
