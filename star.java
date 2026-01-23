@@ -129,6 +129,19 @@ public static void hollowsqu(int n){
     }
 }
 
+public static void  rhombus(int n){
+     for(int i=1; i<=n; i++){
+      for(int s=1; s<=n-i; s++){
+        System.out.print(" ");
+      }
+        for(int j=1; j<=n; j++){
+            System.out.print("*");
+        }
+        
+        System.out.println();
+    }
+}
+
     public static void main(String args[]){
         int num[]={1,2,3,4,5,6};
         int n=5;
@@ -140,6 +153,6 @@ public static void hollowsqu(int n){
         // doubletri(n);
 
         // square(n);
-        hollowsqu(n);
+      rhombus(n);
     }
 }
