@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class star {
 
     public static void hollowstar(int n){
@@ -187,10 +189,22 @@ public static void doublehollowrom(int n){
         System.out.println();
     }
 }
+    public static int minDiferrence(int nums[],int k){
+      if(k==1){
+        return 0;
+        }
+        Arrays.sort(nums);
+        int minDiff= Integer.MAX_VALUE;
+      for(int i=0 ; i+k-1<nums.length; i++){
+        int currnum= nums[i+k-1]-nums[i];
+        minDiff= Math.min(minDiff, currnum);
+      }
+      return minDiff;
+    }
 
     public static void main(String args[]){
-        int num[]={1,2,3,4,5,6};
-        int n=5;
+        int nums[]={9,4,1,7};
+        int k=2;
         // hollowstar(n);
         // triNum(n);
         // hollowRect(n);
@@ -200,6 +214,7 @@ public static void doublehollowrom(int n){
 
         // square(n);
     //   rhombus(n);
-    doublehollowrom(n);
+    // doublehollowrom(n);
+    System.out.println(minDiferrence(nums,k));
     }
 }
