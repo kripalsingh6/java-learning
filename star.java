@@ -1,4 +1,7 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.*;
 
 public class star {
 
@@ -200,11 +203,29 @@ public static void doublehollowrom(int n){
         minDiff= Math.min(minDiff, currnum);
       }
       return minDiff;
+    };
+
+    public List<List<Integer>> minimumAbsDifference(int[] arr) {
+        int minDiffer=Integer.MAX_VALUE;
+        List<List<Integer>> result = new ArrayList<>();
+        Arrays.sort(arr);
+        for(int i=1; i<arr.length; i++){
+            minDiffer= Math.min(minDiffer, arr[i]-arr[i-1]);
+        };
+        for(int i=1; i<arr.length; i++){
+            if(arr[i]-arr[i-1]== minDiffer){
+                result.add(Arrays.asList(arr[i - 1], arr[i]));
+            }
+        };
+        return result;
+       
+        
     }
 
     public static void main(String args[]){
-        int nums[]={9,4,1,7};
+        int nums[]={4,2,1,3};
         int k=2;
+        star obj = new star(); 
         // hollowstar(n);
         // triNum(n);
         // hollowRect(n);
@@ -215,6 +236,6 @@ public static void doublehollowrom(int n){
         // square(n);
     //   rhombus(n);
     // doublehollowrom(n);
-    System.out.println(minDiferrence(nums,k));
+    System.out.println(obj.minimumAbsDifference(nums));
     }
 }
