@@ -235,6 +235,19 @@ public static void doublehollowrom(int n){
 
     }
 
+    public static void num(int n){
+        int num=1;
+        for(int i=1; i<=n; i++){
+            for(int j=n-i; j>=1; j--){
+                System.out.print(" ");
+            }
+            for(int s=1; s<=i; s++){
+                System.out.print(s);
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String args[]){
         int nums[]={4,2,1,3};
         int target=5;
@@ -250,6 +263,7 @@ public static void doublehollowrom(int n){
     //   rhombus(n);
     // doublehollowrom(n);
     // System.out.println(obj.minimumAbsDifference(nums));
-    System.out.println(twoSum(nums,target));
+    // System.out.println(twoSum(nums,target));
+    num(5);
     }
 }
