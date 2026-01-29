@@ -255,7 +255,30 @@ public static void doublehollowrom(int n){
             System.out.println();
         }
     }
+ 
 
+    public staic void diamond(int n){
+          for (int i = 1; i <= n; i += 2) {
+            for (int space = 0; space < (n - i) / 2; space++) {
+                System.out.print(" ");
+            }
+            for (int star = 0; star < i; star++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        // Lower half
+        for (int i = n - 2; i >= 1; i -= 2) {
+            for (int space = 0; space < (n - i) / 2; space++) {
+                System.out.print(" ");
+            }
+            for (int star = 0; star < i; star++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
     public static void main(String args[]){
         int nums[]={4,2,1,3};
         int target=5;
