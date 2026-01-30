@@ -257,7 +257,7 @@ public static void doublehollowrom(int n){
     }
  
 
-    public staic void diamond(int n){
+    public static void diamond(int n){
           for (int i = 1; i <= n; i += 2) {
             for (int space = 0; space < (n - i) / 2; space++) {
                 System.out.print(" ");
@@ -279,6 +279,19 @@ public static void doublehollowrom(int n){
             System.out.println();
         }
     }
+
+    public static int iteration(int arr[]){
+        int maxnum= Integer.MIN_VALUE;
+        int lp=0;
+        int currnum =0;
+        while(lp<arr.length){
+            currnum = arr[lp];
+            maxnum=  Math.max(maxnum, currnum);
+            lp++;
+            
+        }
+        return maxnum;
+    }
     public static void main(String args[]){
         int nums[]={4,2,1,3};
         int target=5;
@@ -295,6 +308,7 @@ public static void doublehollowrom(int n){
     // doublehollowrom(n);
     // System.out.println(obj.minimumAbsDifference(nums));
     // System.out.println(twoSum(nums,target));
-    num2(5);
+    // 
+    System.out.println(iteration(nums));
     }
 }
