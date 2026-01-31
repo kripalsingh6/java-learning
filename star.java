@@ -292,10 +292,31 @@ public static void doublehollowrom(int n){
         }
         return maxnum;
     }
+
+    public static int kadanealgo(int arr[]){
+        int maxnum= Integer.MIN_VALUE;
+        int currnum=0;
+        int lp=0;
+        while(lp<arr.length){
+            currnum += arr[lp];
+            
+            if(currnum>maxnum){
+                maxnum=currnum;
+            };
+            if(currnum<0){
+                currnum=0;
+            }
+            lp++;
+            System.out.println(currnum);
+
+        }
+        maxnum=Math.max(maxnum, currnum);
+        return maxnum;
+    };
     public static void main(String args[]){
         int nums[]={4,2,1,3};
         int target=5;
-        star obj = new star(); 
+        // star obj = new star(); 
         // hollowstar(n);
         // triNum(n);
         // hollowRect(n);
@@ -309,6 +330,6 @@ public static void doublehollowrom(int n){
     // System.out.println(obj.minimumAbsDifference(nums));
     // System.out.println(twoSum(nums,target));
     // 
-    System.out.println(iteration(nums));
+    System.out.println(kadanealgo(nums));
     }
 }
