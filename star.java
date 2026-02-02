@@ -313,6 +313,14 @@ public static void doublehollowrom(int n){
         maxnum=Math.max(maxnum, currnum);
         return maxnum;
     };
+    public static void star(int n){
+        for(int i=0; i<n; i++){
+            for(int j=0; j<n; j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
     public static void main(String args[]){
         int nums[]={4,2,1,3};
         int target=5;
@@ -330,6 +338,7 @@ public static void doublehollowrom(int n){
     // System.out.println(obj.minimumAbsDifference(nums));
     // System.out.println(twoSum(nums,target));
     // 
-    System.out.println(kadanealgo(nums));
+    // System.out.println(kadanealgo(nums));
+    star(target);
     }
 }
