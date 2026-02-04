@@ -321,6 +321,18 @@ public static void doublehollowrom(int n){
             System.out.println();
         }
     }
+    public static int calsum(int n){
+        int sum =0; 
+       for(int i=0; i<n; i++){
+            for(int j=0; j<n; j++){
+                System.out.print("*");
+
+                sum++;
+            }
+            System.out.println();
+        }
+        return sum;
+    }
     public static void main(String args[]){
         int nums[]={4,2,1,3};
         int target=5;
@@ -339,6 +351,7 @@ public static void doublehollowrom(int n){
     // System.out.println(twoSum(nums,target));
     // 
     // System.out.println(kadanealgo(nums));
-    star(target);
+    // star(target);
+    System.out.println(calsum(target));
     }
 }
