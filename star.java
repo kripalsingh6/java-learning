@@ -333,6 +333,24 @@ public static void doublehollowrom(int n){
         }
         return sum;
     }
+     public static int[] constructTransformedArray(int[] nums) {
+         if (nums == null || nums.length == 0) {
+            return new int[0];
+        }
+        int n= nums.length;
+        int result[]= new int[n];
+
+        for(int i=0; i<n; i++){
+            if(nums[i]==0){
+                result[i]=0;
+            }
+            else{
+               int newIndex = ((i + nums[i]) % n + n) % n;
+                result[i] = nums[newIndex];
+            }
+        }
+        return result;
+    }
     public static void main(String args[]){
         int nums[]={4,2,1,3};
         int target=5;
@@ -352,6 +370,7 @@ public static void doublehollowrom(int n){
     // 
     // System.out.println(kadanealgo(nums));
     // star(target);
-    System.out.println(calsum(target));
+    // System.out.println(calsum(target));
+    System.out.println(Arrays.toString(constructTransformedArray(nums)));
     }
 }
