@@ -351,9 +351,27 @@ public static void doublehollowrom(int n){
         }
         return result;
     }
+    public static int minRemoval(int[] nums, int k) {
+        
+        int n= nums.length;
+        Arrays.sort(nums);
+        if(n==0){
+            return 0;
+        }
+        int maxNum=0;
+        int j=0;
+        for(int i=0; i<n; i++){
+            while(j<n && nums[j]<=(long)nums[i]*k){
+                j++;
+            }
+            maxNum= Math.max(maxNum, j-i);
+        }
+        return n-maxNum;
+          
+  }
     public static void main(String args[]){
-        int nums[]={4,2,1,3};
-        int target=5;
+        int nums[]={1,3,5,10};
+        int target=3;
         // star obj = new star(); 
         // hollowstar(n);
         // triNum(n);
@@ -371,6 +389,7 @@ public static void doublehollowrom(int n){
     // System.out.println(kadanealgo(nums));
     // star(target);
     // System.out.println(calsum(target));
-    System.out.println(Arrays.toString(constructTransformedArray(nums)));
+    // System.out.println(Arrays.toString(constructTransformedArray(nums)));
+    System.out.println(minRemoval(nums,target));
     }
 }
