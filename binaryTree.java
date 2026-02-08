@@ -49,7 +49,7 @@ public class binaryTree {
         while (!q.isEmpty()) {
             Node currNode = q.remove();
             if(currNode==null){
-                System.out.println();
+                System.out.println("null");
                 if(q.isEmpty()){
                     break;
             }else{
