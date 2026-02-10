@@ -1,4 +1,3 @@
-import java.util.Queue;
 import java.util.*;
 
 import org.w3c.dom.Node;
@@ -68,10 +67,42 @@ public class binaryTree {
         
     }
 }
-    public static void main(String[] args){
-        int nodes[]={1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
-       Node root = InnerbinaryTree.Buildtree(nodes);
-        // preorder(root);
-        levelOrder(root);
+ static ArrayList<Integer> inorderlist = new ArrayList<>();
+
+    public static Node BalancedSearch(Node root) {
+        inorderlist.clear();
+        inorder(root);
+        return BuildTree(0, inorderlist.size() - 1);
+    }
+
+    public static void inorder(Node root) {
+        if (root == null) return;
+
+        inorder(root.left);
+        inorderlist.add(root.data);
+        inorder(root.right);
+    }
+
+    public static Node BuildTree(int left, int right) {
+        if (left > right) return null;
+
+        int mid = left + (right - left) / 2;
+        Node node = new Node(inorderlist.get(mid));
+
+        node.left = BuildTree(left, mid - 1);
+        node.right = BuildTree(mid + 1, right);
+
+        return node;
+    }
+
+    public static void main(String[] args) {
+
+        Node root = new Node(1);
+        root.right = new Node(2);
+        root.right.right = new Node(3);
+        root.right.right.right = new Node(4);
+
+        Node balancedRoot = BalancedSearch(root);
+        inorder(balancedRoot); // test
     }
 }
