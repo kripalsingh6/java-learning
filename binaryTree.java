@@ -94,15 +94,40 @@ public class binaryTree {
 
         return node;
     }
+     public static int longestBalanced(int[] nums) {
+        int Maxlength= 0;
+
+        int n= nums.length;
+        for(int i=0; i<n; i++){
+              Map<Integer, Integer> even = new HashMap<>();
+        Map<Integer, Integer> odd  = new HashMap<>();
+            if(n-i<=Maxlength){
+                break;
+            }
+            for(int j=i; j<n; j++){
+               if (nums[j] % 2 == 0) {
+                even.put(nums[j], even.getOrDefault(nums[j], 0) + 1);
+            } else {
+                odd.put(nums[j], odd.getOrDefault(nums[j], 0) + 1);
+            }
+                if(even.size()==odd.size()){
+                    Maxlength= Math.max(Maxlength, j-i+1);
+                }
+            }
+        }
+        return Maxlength;
+    }
 
     public static void main(String[] args) {
+        int nums[]={2,4,3,5};
+        System.out.println(longestBalanced(nums));
 
-        Node root = new Node(1);
-        root.right = new Node(2);
-        root.right.right = new Node(3);
-        root.right.right.right = new Node(4);
+        // Node root = new Node(1);
+        // root.right = new Node(2);
+        // root.right.right = new Node(3);
+        // root.right.right.right = new Node(4);
 
-        Node balancedRoot = BalancedSearch(root);
-        inorder(balancedRoot); // test
+        // Node balancedRoot = BalancedSearch(root);
+        // inorder(balancedRoot); // test
     }
 }
