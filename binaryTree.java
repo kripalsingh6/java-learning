@@ -117,10 +117,19 @@ public class binaryTree {
         }
         return Maxlength;
     }
+    public static int power(int n){
+        if(n<0){
+           return 0;
+        }
+        
+        int nums= power(n-1);
+        return nums;
+    }
 
     public static void main(String[] args) {
-        int nums[]={2,4,3,5};
-        System.out.println(longestBalanced(nums));
+        // int nums[]={2,4,3,5};
+        // System.out.println(longestBalanced(nums));
+        System.out.println(power(5));
 
         // Node root = new Node(1);
         // root.right = new Node(2);
