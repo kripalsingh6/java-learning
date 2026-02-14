@@ -125,11 +125,25 @@ public class binaryTree {
         int nums= power(n-1);
         return nums;
     }
+    public static void subarray(int arr[]){
+        int n = arr.length;
+
+        for (int start = 0; start < n; start++) {
+            for (int end = start; end < n; end++) {
+
+                // Print subarray from start to end
+                for (int k = start; k <= end; k++) {
+                    System.out.print(arr[k] + " ");
+                }
+                System.out.println();
+            }
+        }
+    }
 
     public static void main(String[] args) {
-        // int nums[]={2,4,3,5};
+         int nums[]={2,4,3,5};
         // System.out.println(longestBalanced(nums));
-        System.out.println(power(5));
+         subarray(nums);
 
         // Node root = new Node(1);
         // root.right = new Node(2);
