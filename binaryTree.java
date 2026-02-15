@@ -139,11 +139,41 @@ public class binaryTree {
             }
         }
     }
+    public static String sumStr(String a, String b){
+         StringBuilder result = new StringBuilder();
+        
+        int i = a.length() - 1;
+        int j = b.length() - 1;
+        int carry = 0;
+        
+        while (i >= 0 || j >= 0 || carry > 0) {
+            
+            int sum = carry;
+            
+            if (i >= 0) {
+                sum += a.charAt(i) - '0';
+                i--;
+            }
+            
+            if (j >= 0) {
+                sum += b.charAt(j) - '0';
+                j--;
+            }
+            
+            result.append(sum % 2);
+            carry = sum / 2;
+        }
+        
+        return result.reverse().toString();
+    }
 
     public static void main(String[] args) {
-         int nums[]={2,4,3,5};
+        //  int nums[]={2,4,3,5};
         // System.out.println(longestBalanced(nums));
-         subarray(nums);
+        //  subarray(nums);
+        String a= "10101";
+        String b= "1110";
+        System.out.println(sumStr(a, b));
 
         // Node root = new Node(1);
         // root.right = new Node(2);
