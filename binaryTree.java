@@ -184,14 +184,24 @@ public class binaryTree {
         }
         return decimal;
     }
+    public static int singleNumber(int[] nums) {
+        int result=0;
+        for(int i=0; i<nums.length; i++){
+
+            result= result ^ nums[i];
+        }
+        return result;
+    }
     public static void main(String[] args) {
-        //  int nums[]={2,4,3,5};
+         int nums[]={2,4,2,4,3,3,5};
+         System.out.println(singleNumber(nums));
         // System.out.println(longestBalanced(nums));
         //  subarray(nums);
         // String a= "10101";
         // String b= "1110";
         // System.out.println(sumStr(a, b));
-        System.out.println(reverseBits(52135));
+        // System.out.println(reverseBits(52135));
+
 
         // Node root = new Node(1);
         // root.right = new Node(2);
