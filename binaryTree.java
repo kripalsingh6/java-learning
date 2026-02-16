@@ -167,13 +167,31 @@ public class binaryTree {
         return result.reverse().toString();
     }
 
+
+    public static int reverseBits(int n) {
+        
+        String binary = String.format("%32s", Integer.toBinaryString(n))
+                            .replace(' ', '0');
+        
+        String reverse = new StringBuilder(binary).reverse().toString();
+
+        int decimal= 0;
+        int power= 0;
+        for(int i=reverse.length()-1; i>=0; i--){
+            int digit= reverse.charAt(i)-'0';
+            decimal+= digit*Math.pow(2, power);
+            power++;
+        }
+        return decimal;
+    }
     public static void main(String[] args) {
         //  int nums[]={2,4,3,5};
         // System.out.println(longestBalanced(nums));
         //  subarray(nums);
-        String a= "10101";
-        String b= "1110";
-        System.out.println(sumStr(a, b));
+        // String a= "10101";
+        // String b= "1110";
+        // System.out.println(sumStr(a, b));
+        System.out.println(reverseBits(52135));
 
         // Node root = new Node(1);
         // root.right = new Node(2);
