@@ -206,11 +206,43 @@ public class binaryTree {
         }
         return result;
     }
+     public static boolean hasAlternatingBits(int n) {
+        
+        // String binary= "";
+        // while(n>0){
+        //     int remainder= n%2;
+        //     binary= remainder+ binary;
+        //     n=n/2;
+        // }
+
+        // for(int i=1; i<binary.length(); i++){
+        //     if(binary.charAt(i) ==binary.charAt(i-1)){
+        //         return false;
+        //     }
+
+        // }
+        // return true;
+        int prev = n % 2;   // get last digit (0 or 1)
+        n = n / 2;          // divide by 2
+
+        while(n > 0){
+            int curr = n % 2;   // get next digit
+            
+            if(curr == prev){   // if two adjacent bits are same
+                return false;
+            }
+            
+            prev = curr;        // update previous
+            n = n / 2;          // divide by 2 again
+        }
+
+        return true;
+    }
     public static void main(String[] args) {
         //  int nums[]={2,4,2,4,3,3,5};
         //  System.out.println(singleNumber(nums));
-        int n=1;
-        System.out.println(readBinaryWatch(n));
+        int n=5;
+        System.out.println(hasAlternatingBits(n));
         // System.out.println(longestBalanced(nums));
         //  subarray(nums);
         // String a= "10101";
