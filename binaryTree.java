@@ -238,11 +238,28 @@ public class binaryTree {
 
         return true;
     }
+     public static int countBinarySubstrings(String s) {
+        int prev= 0; 
+        int curr= 1;
+        int result=0;
+        
+         for(int i=1; i<s.length(); i++){
+            if(s.charAt(i) == s.charAt(i-1)){
+               curr++;
+            }else{
+                result += Math.min(prev,curr);
+                prev= curr;
+                curr=1;
+            }
+        }
+        result += Math.min(prev,curr);
+        return result;
+    }
     public static void main(String[] args) {
         //  int nums[]={2,4,2,4,3,3,5};
         //  System.out.println(singleNumber(nums));
-        int n=5;
-        System.out.println(hasAlternatingBits(n));
+        String n="00110010";
+        System.out.println(countBinarySubstrings(n));
         // System.out.println(longestBalanced(nums));
         //  subarray(nums);
         // String a= "10101";
