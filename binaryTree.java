@@ -255,11 +255,20 @@ public class binaryTree {
         result += Math.min(prev,curr);
         return result;
     }
+    public static int value(int n){
+        if(n==0 || n==1){
+            return 1;
+        }
+        int fact=n*value(n-1);
+        return fact;
+    }
     public static void main(String[] args) {
         //  int nums[]={2,4,2,4,3,3,5};
         //  System.out.println(singleNumber(nums));
-        String n="00110010";
-        System.out.println(countBinarySubstrings(n));
+        // String n="00110010";
+        // System.out.println(countBinarySubstrings(n));
+        int n=5;
+        System.out.println(value(n));
         // System.out.println(longestBalanced(nums));
         //  subarray(nums);
         // String a= "10101";
