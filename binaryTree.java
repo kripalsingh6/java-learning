@@ -301,6 +301,50 @@ public class binaryTree {
         return lca;
         
     }
+    public static Node lca2(Node root , int n1 , int n2){
+        if(root == null || root.data == n1 || root.data == n2){
+            return root;
+        }
+        Node leftlca= lca2(root.left, n1, n2);
+        Node rightlca= lca2(root.right, n1, n2);
+
+        if(leftlca == null){
+            return rightlca;
+        }
+        if(rightlca == null){
+            return leftlca;
+        }
+        return root;
+    }
+    public static int lcadis(Node root , int n){
+        if(root==null){
+            return -1;
+        }
+        if(root.data == n){
+            return 0;
+
+        }
+
+        int leftdis=lcadis(root.left, n);
+        int rightdis=lcadis(root.right, n);
+
+       if(leftdis == -1 && rightdis == -1){
+    return -1;
+}
+else if(leftdis == -1){
+    return rightdis + 1;
+}
+else{
+    return leftdis + 1;
+}
+
+    }
+    public static int MiniDis(Node root , int n1 , int n2){
+        Node lca = lca2(root, n1, n2);
+        int dis1= lcadis(lca,n1);
+        int dis2 = lcadis(lca , n2);
+        return dis1 + dis2;
+    }
     public static void main(String[] args) {
         //  int nums[]={2,4,2,4,3,3,5};
         //  System.out.println(singleNumber(nums));
@@ -330,7 +374,7 @@ public class binaryTree {
         int n1=4;
         int n2=5;
 
-        System.out.println(lca(root, n1, n2).data);
+        System.out.println( MiniDis(root, n1, n2));
 
         // Node balancedRoot = BalancedSearch(root);
         // inorder(balancedRoot); // test
